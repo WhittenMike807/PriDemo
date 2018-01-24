@@ -81,9 +81,10 @@ export class MyErrorHandler implements ErrorHandler {
   ],
   providers: [
     IonicErrorHandler,
+    [{ provide: ErrorHandler, useClass: MyErrorHandler }],
     StatusBar,
     SplashScreen,
-    { provide: ErrorHandler, useClass: MyErrorHandler},
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
     Camera,
     User,
     Cognito,
