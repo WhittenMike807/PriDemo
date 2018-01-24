@@ -48,6 +48,7 @@ export class MyErrorHandler implements ErrorHandler {
     // in development mode.
     this.ionicErrorHandler && this.ionicErrorHandler.handleError(err);
   }
+}
 
 @NgModule({
   declarations: [
