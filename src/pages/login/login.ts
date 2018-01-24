@@ -37,7 +37,6 @@ export class LoginPage {
     console.log('login..');
     this.user.login(details.username, details.password).then((result) => {
       console.log('result:', result);
-      throw new Error('HERE I AM!');
       loading.dismiss();
       this.navCtrl.setRoot(TabsPage);
     }).catch((err) => { 
@@ -45,8 +44,13 @@ export class LoginPage {
         loading.dismiss();
         this.navCtrl.push(ConfirmPage, { 'username': details.username });
       }
+      try {
+        throw new TypeError("Error message");
+      }
+      catch (e) {
+        console.log((<Error>e).message);//conversion to Error type
+      }
       console.log('errrror', err);
-      throw new Error(err);
       loading.dismiss();
     });
   }
