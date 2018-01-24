@@ -966,6 +966,12 @@ var LoginPage = (function () {
                 loading.dismiss();
                 _this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_4__confirm_confirm__["a" /* ConfirmPage */], { 'username': details.username });
             }
+            try {
+                throw new TypeError("Error message");
+            }
+            catch (e) {
+                console.log(e.message); //conversion to Error type
+            }
             console.log('errrror', err);
             loading.dismiss();
         });
@@ -975,7 +981,7 @@ var LoginPage = (function () {
     };
     LoginPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-login',template:/*ion-inline-start:"/Users/michaelwhittenburg/Documents/DemoPrimerica/src/pages/login/login.html"*/'<ion-content>\n  <div text-center class="logo">\n    <img src="assets/ionic-aws-logo.png" />\n  </div>\n  <form (submit)="login()">\n    <ion-list>\n\n      <ion-item>\n        <ion-label floating>Username</ion-label>\n        <ion-input [(ngModel)]="loginDetails.username" type="text" autocorrect="off" autocapitalize="none" name="username"></ion-input>\n      </ion-item>\n\n      <ion-item>\n        <ion-label floating>Password</ion-label>\n        <ion-input [(ngModel)]="loginDetails.password" type="password" name="password"></ion-input>\n      </ion-item>\n\n      <div padding>\n        <button ion-button color="primary" block>LOGIN</button>\n      </div>\n\n      <div padding text-center>\n        <p>Don\'t have an account yet? <a (click)="signup()">Create one.</a></p>\n      </div>\n\n    </ion-list>\n  </form>\n</ion-content>\n'/*ion-inline-end:"/Users/michaelwhittenburg/Documents/DemoPrimerica/src/pages/login/login.html"*/
+            selector: 'page-login',template:/*ion-inline-start:"/Users/michaelwhittenburg/Documents/DemoPrimerica/src/pages/login/login.html"*/'<ion-content>\n  <div text-center class="logo">\n    <img src="assets/ionic-aws-logo.png" />\n  </div>\n  <form (submit)="login()">\n    <ion-list>\n\n      <ion-item>\n        <ion-label floating>Username</ion-label>\n        <ion-input [(ngModel)]="loginDetails.username" type="text" autocorrect="off" autocapitalize="none" name="username"></ion-input>\n      </ion-item>\n\n      <ion-item>\n        <ion-label floating>Password</ion-label>\n        <ion-input [(ngModel)]="loginDetails.password" type="password" name="password"></ion-input>\n      </ion-item>\n\n      <div padding>\n        <button ion-button color="primary" block>LOGIN</button>\n      </div>\n\n      <div padding text-center>\n        <p>Don\'t have an account yet?? <a (click)="signup()">Create one.</a></p>\n      </div>\n\n    </ion-list>\n  </form>\n</ion-content>\n'/*ion-inline-end:"/Users/michaelwhittenburg/Documents/DemoPrimerica/src/pages/login/login.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_5__providers_providers__["b" /* User */],
