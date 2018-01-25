@@ -23,6 +23,7 @@ import { Cognito } from '../providers/aws.cognito';
 import { DynamoDB } from '../providers/aws.dynamodb';
 
 import { Pro } from '@ionic/pro';
+import { RaygunErrorHandler } from './app.raygun.setup';
 
 
 const IonicPro = Pro.init('a73f81ca', {
@@ -82,10 +83,9 @@ export class MyErrorHandler implements ErrorHandler {
   ],
   providers: [
     IonicErrorHandler,
-    [{ provide: ErrorHandler, useClass: MyErrorHandler }],
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    { provide: ErrorHandler, useClass: RaygunErrorHandler},
     Camera,
     User,
     Cognito,

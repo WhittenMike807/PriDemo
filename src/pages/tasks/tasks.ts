@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-
+import * as rg4js from 'raygun4js';
 import { NavController, ModalController } from 'ionic-angular';
 import { TasksCreatePage } from '../tasks-create/tasks-create';
 
@@ -28,6 +28,12 @@ export class TasksPage {
   refreshData(refresher) {
     this.refresher = refresher;
     this.refreshTasks()
+  }
+
+  generateError(){
+    rg4js('send', {
+      error: 'There was an error on the page'
+    });
   }
 
   refreshTasks() {
