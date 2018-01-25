@@ -1014,6 +1014,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+// declare const aws_user_pools_web_client_id;
 var User = (function () {
     function User(cognito, config) {
         this.cognito = cognito;
