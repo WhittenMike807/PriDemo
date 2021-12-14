@@ -1,9 +1,9 @@
 resources:
-  - name: jfrogtw_hw_repo
+  - name: TestPipelineSource
     type: GitRepo
     configuration:
-      gitProvider: MyGitHub
-      path: jfrogtw/jfrog-pipelines-hw
+      gitProvider: PersonalGitHub
+      path: WhittenMike807/PriDemo
       branches:
         include: master
         
